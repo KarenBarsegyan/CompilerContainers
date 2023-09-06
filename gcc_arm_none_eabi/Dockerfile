@@ -1,16 +1,14 @@
 FROM ubuntu:22.04
 
-WORKDIR /work
-
 # install all software but not gcc arm none eabi (it's too heavy)
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     build-essential \
-    openocd \
     make \
-    stlink-tools \
-    usbutils \
-    wget \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    ninja-build \
+    cmake \
+    doxygen \
+    graphviz \
+ && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install gcc arm none eabi from source
 
@@ -24,7 +22,7 @@ RUN mkdir gcc-arm-none-eabi && tar xjfv gcc-arm-none-eabi.tar.bz2  -C gcc-arm-no
 # add the tools to the path
 ENV PATH="/gcc-arm-none-eabi/bin:${PATH}"
 
-# COPY . .
+WORKDIR /work
 
 # ENTRYPOINT [ "make" ]
 

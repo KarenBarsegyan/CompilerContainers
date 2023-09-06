@@ -52,3 +52,14 @@ Mkfile.old
 dkms.conf
 
 # Docker generated files
+
+# Archives
+*.tar
+*.bz2
+*.deb
+*.gz
+*.xz
+doxyrest_b
+expat-*
+lua-*
+doxyrest-*
