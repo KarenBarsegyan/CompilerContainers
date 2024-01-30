@@ -22,7 +22,7 @@ RUN mkdir gcc-arm-none-eabi && tar xjfv gcc-arm-none-eabi.tar.bz2  -C gcc-arm-no
 # add the tools to the path
 ENV PATH="/gcc-arm-none-eabi/bin:${PATH}"
 
-WORKDIR /work
+WORKDIR /
 
 # ENTRYPOINT [ "make" ]
 
