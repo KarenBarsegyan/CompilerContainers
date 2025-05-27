@@ -1,0 +1,9 @@
+if SWD 
+speed 4000 
+device YTM32B1ME05G0MLQT
+connect
+rx 200
+rx 1000
+loadfile /work/TEST_SPI_YTM.hex
+rx 1000
+q
